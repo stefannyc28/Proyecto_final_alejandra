@@ -12,3 +12,6 @@ Material del curso presencial “Análisis Predictivo y Gestión de Datos”: pr
 - [Sesión 7: Comparación de modelos y redes neuronales](session-07/)  
 - [Sesión 8: Proyecto final](session-08/)  
 
+## Datos
+
+Todos los ficheros de datos utilizados en el curso están disponibles en la carpeta [datos](datos/).
