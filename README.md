@@ -1,4 +1,7 @@
 # Analisis predictivo gestion datos
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/orinconl/analisis-predictivo-gestion-datos/main)
+
+
 Material del curso presencial “Análisis Predictivo y Gestión de Datos”: presentaciones (PDF/TEX), notebooks de Jupyter y recursos para las 8 sesiones.
 
 ## Contenidos
