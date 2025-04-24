@@ -1,0 +1,349 @@
+
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{lmodern}
+\title{Análisis Predictivo y Gestión de Datos}
+\subtitle{Sesión 1: Introducción al Análisis Predictivo}
+\author{Oscar Leonardo Rincón León}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Objetivos de la sesión}
+\begin{itemize}
+    \item Comprender qué es el análisis predictivo
+    \item Introducir conceptos básicos de aprendizaje estadístico y Machine Learning
+    \item Conocer los tipos de datos utilizados en predicción
+    \item Identificar herramientas clave como Excel y Python
+    \item Aplicar los conceptos en contextos sociales y financieros
+\end{itemize}
+\end{frame}
+
+\begin{frame}{¿Qué es el análisis predictivo?}
+	\begin{itemize}
+		\item Es una disciplina que combina estadísticas, ciencia de datos y aprendizaje automático.
+		\item Utiliza datos históricos para anticipar comportamientos o resultados futuros.
+		\item Permite modelar relaciones entre variables independientes (predictoras) y una variable objetivo.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Ejemplos de aplicación}
+	\textbf{Contexto social:}
+	\begin{itemize}
+		\item Predecir deserción escolar.
+		\item Identificar hogares con riesgo de pobreza extrema.
+		\item Priorizar beneficiarios de subsidios o programas sociales.
+	\end{itemize}
+	\vspace{0.3cm}
+	\textbf{Contexto financiero y administrativo:}
+	\begin{itemize}
+		\item Anticipar incumplimientos de pago (riesgo crediticio).
+		\item Clasificar clientes según rentabilidad o riesgo.
+		\item Proyectar demanda de servicios o productos.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{¿Qué es el aprendizaje estadístico?}
+	\begin{itemize}
+		\item Es un conjunto de herramientas que permite:
+		\begin{itemize}
+			\item Comprender la estructura de los datos.
+			\item Estimar relaciones entre variables.
+			\item Realizar predicciones sobre nuevos datos.
+		\end{itemize}
+		\item Está en la base de muchas técnicas modernas de Machine Learning.
+		\item Su objetivo principal es estimar una función $f$ tal que $Y \approx f(X)$.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Tipos de aprendizaje estadístico}
+	\begin{itemize}
+		\item \textbf{Aprendizaje supervisado:}
+		\begin{itemize}
+			\item El conjunto de datos incluye una variable objetivo $Y$ conocida.
+			\item Se busca predecir $Y$ a partir de $X$.
+			\item Ejemplos: regresión, clasificación.
+		\end{itemize}
+		
+		\item \textbf{Aprendizaje no supervisado:}
+		\begin{itemize}
+			\item No se observa una variable objetivo.
+			\item El objetivo es encontrar patrones o estructuras internas.
+			\item Ejemplos: clustering, reducción de dimensionalidad.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{¿Por qué usar aprendizaje estadístico?}
+	\begin{itemize}
+		\item Permite construir modelos predictivos a partir de evidencia empírica.
+		\item Se utiliza cuando no es posible modelar fenómenos con fórmulas teóricas exactas.
+		\item Es útil en áreas como:
+		\begin{itemize}
+			\item Salud, educación, banca, gobierno, mercadeo.
+		\end{itemize}
+		\item También permite explorar grandes volúmenes de datos donde otras técnicas fallan.
+	\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Tipos de problemas en análisis predictivo}
+	\begin{itemize}
+		\item En análisis predictivo, los problemas se dividen según el tipo de variable que queremos predecir.
+		\item Esta clasificación determina:
+		\begin{itemize}
+			\item El tipo de modelo a usar.
+			\item La métrica de evaluación adecuada.
+			\item El preprocesamiento necesario.
+		\end{itemize}
+		\item Existen dos tipos principales: \textbf{regresión} y \textbf{clasificación}.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Problemas de regresión}
+	\begin{itemize}
+		\item Ocurren cuando la variable objetivo $Y$ es \textbf{numérica y continua}.
+		\item El objetivo es predecir un valor aproximado dentro de un rango posible.
+		\item \textbf{Ejemplos:}
+		\begin{itemize}
+			\item Predecir el ingreso mensual de una persona.
+			\item Estimar el costo de un proyecto social.
+			\item Calcular la demanda futura de un producto o servicio.
+		\end{itemize}
+		\item Modelos típicos: regresión lineal, regresión de árboles, redes neuronales regresivas.
+	\end{itemize}
+	\end{frame}
+
+\begin{frame}{Problemas de regresión}	
+	\begin{itemize}
+		\item El objetivo del análisis predictivo es estimar una función $f(X)$ que prediga con precisión una variable objetivo $Y$.
+		
+		\item \textbf{En regresión:} se busca minimizar el error cuadrático medio entre el valor real y la predicción:
+		\[
+		\min_{f} \; \mathbb{E} \left[(Y - f(X))^2\right]
+		\]
+			\end{itemize}
+	\end{frame}
+
+
+\begin{frame}{Problemas de clasificación}
+	\begin{itemize}
+		\item Se presentan cuando la variable objetivo $Y$ es \textbf{categórica o discreta}.
+		\item El objetivo es asignar cada observación a una clase o grupo definido.
+		\item \textbf{Ejemplos:}
+		\begin{itemize}
+			\item Determinar si un estudiante abandonará o no la escuela.
+			\item Clasificar si una persona es elegible o no para un subsidio.
+			\item Detectar si una transacción financiera es fraudulenta.
+		\end{itemize}
+		\item Modelos típicos: regresión logística, KNN, árboles de decisión, redes neuronales.
+	\end{itemize}
+	\end{frame}
+	
+\begin{frame}{Problemas de clasificación}
+		\begin{itemize}
+
+   		 \item \textbf{En clasificación:} se busca predecir la clase más probable:
+		\[
+		\hat{Y} = \arg\max_{c} \; P(Y = c \mid X)
+		\]
+
+\item Este planteamiento guía la elección del modelo y de la métrica de evaluación.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Tipos de datos en predicción}
+	\begin{itemize}
+		\item \textbf{Numéricos continuos:}
+		\begin{itemize}
+			\item Toman cualquier valor dentro de un rango.
+			\item Ejemplos: edad, ingreso mensual, horas de trabajo semanales.
+		\end{itemize}
+		
+		\item \textbf{Categóricos (nominales):}
+		\begin{itemize}
+			\item No tienen orden intrínseco.
+			\item Ejemplos: género, municipio, tipo de programa.
+		\end{itemize}
+		
+		\item \textbf{Ordinales:}
+		\begin{itemize}
+			\item Tienen un orden natural entre categorías.
+			\item Ejemplos: nivel educativo (primaria < secundaria < universidad), satisfacción del usuario (baja, media, alta).
+		\end{itemize}
+		
+		\item \textbf{Temporales:}
+		\begin{itemize}
+			\item Representan el tiempo: fechas, años, trimestres.
+			\item Ejemplos: fecha de inscripción, año de nacimiento.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Importancia del tipo de dato en modelado}
+	\begin{itemize}
+		\item Cada tipo de dato requiere un tratamiento específico para usarse correctamente en un modelo:
+		\begin{itemize}
+			\item \textbf{Numéricos:} pueden usarse directamente o ser escalados.
+			\item \textbf{Categóricos:} necesitan ser codificados (por ejemplo, one-hot encoding).
+			\item \textbf{Ordinales:} pueden representarse con enteros, respetando su orden.
+			\item \textbf{Temporales:} pueden descomponerse en componentes útiles (año, mes, estacionalidad).
+		\end{itemize}
+		\item Usar mal un tipo de dato puede distorsionar los resultados del modelo.
+		\item El preprocesamiento adecuado es clave para un buen desempeño predictivo.
+	\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{¿Cómo se clasifican los sistemas de Machine Learning?}
+	\begin{itemize}
+		\item El aprendizaje automático (Machine Learning) abarca una gran variedad de métodos y algoritmos.
+		\item Estos sistemas pueden clasificarse desde distintas perspectivas según:
+		\begin{itemize}
+			\item El tipo de datos disponibles para entrenar el modelo.
+			\item La forma en que el modelo procesa los datos.
+			\item La estrategia que sigue para hacer predicciones.
+		\end{itemize}
+		\item Entender estas diferencias nos ayuda a elegir el enfoque adecuado para cada problema.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Tipos de aprendizaje automático}
+	\begin{itemize}
+		\item \textbf{Aprendizaje supervisado:}
+		\begin{itemize}
+			\item El modelo aprende a partir de datos etiquetados (con una variable objetivo conocida).
+			\item Ejemplo: predecir si un hogar es vulnerable según sus características.
+		\end{itemize}
+		
+		\item \textbf{Aprendizaje no supervisado:}
+		\begin{itemize}
+			\item No se dispone de una variable objetivo.
+			\item Se busca descubrir estructuras o patrones ocultos.
+			\item Ejemplo: segmentar municipios en grupos similares de forma automática.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Otras formas de clasificar los sistemas de ML}
+	\begin{itemize}
+		\item \textbf{Por lotes (batch) vs. en línea (online):}
+		\begin{itemize}
+			\item En batch, el modelo se entrena con todos los datos de una vez.
+			\item En línea, el modelo se actualiza progresivamente con cada nuevo dato.
+		\end{itemize}
+		
+		\item \textbf{Basado en instancias vs. basado en modelos:}
+		\begin{itemize}
+			\item Los modelos basados en instancias (como KNN) guardan los datos y comparan nuevos casos.
+			\item Los modelos basados en funciones (como regresión) aprenden una regla general a partir de los datos.
+		\end{itemize}
+		
+		\item \textbf{Este curso:} usaremos principalmente aprendizaje \textbf{supervisado por lotes}, con modelos funcionales y de instancia.
+	\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{Herramientas de software para análisis predictivo}
+	\begin{itemize}
+		\item \textbf{Excel:}
+		\begin{itemize}
+			\item Útil para exploración rápida y reportes básicos.
+			\item Limitado en volumen y capacidad para modelado complejo.
+		\end{itemize}
+		
+		\item \textbf{SQL (Structured Query Language):}
+		\begin{itemize}
+			\item Lenguaje estándar para consultar bases de datos relacionales.
+			\item Permite seleccionar, agrupar, unir y filtrar datos antes de analizarlos.
+			\item Muy usado en contextos institucionales, financieros y públicos.
+		\end{itemize}
+		
+		\item \textbf{Python + Jupyter Notebook:}
+		\begin{itemize}
+			\item Plataforma principal del curso.
+			\item Permite documentar análisis, ejecutar código y visualizar resultados.
+			\item Librerías clave:
+			\begin{itemize}
+				\item \texttt{pandas}, \texttt{matplotlib}, \texttt{seaborn}, \texttt{scikit-learn}
+			\end{itemize}
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Otras herramientas relevantes}
+	\begin{itemize}
+		\item \textbf{R:} Lenguaje poderoso para análisis estadístico y visualización. Usado en investigación y salud pública.
+		\item \textbf{Stata / SPSS:} Entornos amigables con menú. Muy usados en economía y ciencias sociales.
+		\item \textbf{Power BI / Tableau:} Herramientas visuales para presentar resultados a públicos no técnicos.
+		\item \textbf{SAS / KNIME / RapidMiner:} Plataformas de pago o gratuitas para modelado visual sin programación.
+		\item \textbf{En este curso:} Usaremos Python + Jupyter como herramienta principal, pero reconoceremos el ecosistema completo.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Resumen de la sesión (1/2)}
+	\begin{itemize}
+		\item El análisis predictivo permite anticipar resultados y apoyar decisiones estratégicas mediante el uso de datos históricos y modelos matemáticos.
+		
+		\item Comprender la naturaleza de los datos es esencial para su uso en modelos:
+		\begin{itemize}
+			\item Numéricos, categóricos, ordinales, temporales.
+			\item Cada tipo requiere un tratamiento diferente.
+		\end{itemize}
+		
+		\item Los problemas que resolveremos se dividen en regresión y clasificación, según el tipo de variable objetivo.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Resumen de la sesión (2/2)}
+	\begin{itemize}
+		\item Un modelo predictivo no solo debe ser preciso, también debe:
+		\begin{itemize}
+			\item Ser útil en su contexto.
+			\item Ser comprensible para quienes toman decisiones.
+			\item Generar valor en la práctica.
+		\end{itemize}
+		
+		\item Durante el curso, construiremos soluciones aplicadas a contextos reales:
+		\begin{itemize}
+			\item Proyectos sociales, programas públicos y administración financiera.
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Cierre de la sesión y lo que viene}
+	\textbf{Conclusiones:}
+	\begin{itemize}
+		\item Hoy dimos nuestros primeros pasos en análisis predictivo: qué es, para qué sirve, y cómo se relaciona con los datos.
+		\item Exploramos un conjunto de datos reales para reconocer variables numéricas y categóricas, e interpretar visualmente su distribución.
+		\item Comprobamos que observar los datos antes de modelar es esencial para detectar errores, entender patrones y tomar buenas decisiones.
+	\end{itemize}
+	
+	\vspace{0.3cm}
+	\textbf{En la próxima sesión:}
+	\begin{itemize}
+		\item Nos enfocaremos en la \textbf{preparación y limpieza de datos}:
+		\begin{itemize}
+			\item Tratamiento de valores faltantes
+			\item Codificación de variables categóricas
+			\item Escalado y normalización
+		\end{itemize}
+		\item Estas transformaciones son fundamentales para que los modelos predictivos funcionen correctamente.
+	\end{itemize}
+\end{frame}
+
+
+
+\end{document}

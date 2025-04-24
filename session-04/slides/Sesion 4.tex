@@ -1,0 +1,138 @@
+
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{lmodern}
+
+\title{Análisis Predictivo y Gestión de Datos}
+\subtitle{Sesión 4: Primer modelo supervisado - KNN}
+\author{Oscar Leonardo Rincón León}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Objetivo de la sesión}
+\begin{itemize}
+    \item Implementar un modelo de clasificación supervisado básico usando el algoritmo K-Nearest Neighbors (KNN).
+    \item Comprender el funcionamiento, limitaciones y requerimientos de este algoritmo.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{¿Qué es el aprendizaje supervisado?}
+\begin{itemize}
+    \item Técnica de aprendizaje automático en la que se entrena un modelo con datos de entrada $X$ y salidas conocidas $y$.
+    \item El objetivo es aproximar una función $f$ tal que $y \approx f(X)$.
+    \item Se busca minimizar el error entre la predicción del modelo y la salida real: $y = f(X) + \varepsilon$.
+    \item Ejemplos:
+    \begin{itemize}
+        \item Predecir si un estudiante abandonará la universidad (clasificación).
+        \item Estimar el ingreso mensual en función de edad y educación (regresión).
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Clasificación vs Regresión}
+\begin{itemize}
+    \item \textbf{Clasificación:} la variable objetivo es una etiqueta o categoría (ej. sí/no, tipo A/B/C).
+    \item \textbf{Regresión:} la variable objetivo es continua (ej. ingresos, edad, temperatura).
+    \item KNN puede ser usado para ambos, pero hoy lo aplicamos a clasificación binaria.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{¿Qué es el algoritmo KNN? (1/2)}
+\begin{itemize}
+    \item KNN significa \textbf{K-Nearest Neighbors} (K vecinos más cercanos).
+    \item Es un algoritmo de clasificación supervisado que se basa en la distancia entre puntos.
+    \item No construye un modelo explícito, sino que decide al momento de hacer una predicción.
+    \item Se le conoce como un modelo “perezoso” porque no entrena previamente.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{¿Qué es el algoritmo KNN? (2/2)}
+\begin{itemize}
+    \item Para predecir la clase de un nuevo dato, el algoritmo:
+    \begin{enumerate}
+        \item Calcula la distancia entre el nuevo punto y todos los puntos del entrenamiento.
+        \item Selecciona los $k$ vecinos más cercanos.
+        \item Asigna la clase más común entre ellos.
+    \end{enumerate}
+    \item \textbf{Ejemplo:} Si una persona tiene edad e ingreso similares a 5 individuos, y 3 de ellos tienen alta conectividad, se clasificará como "\ alta conectividad " si $k=5$.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{¿Qué significa entrenar un modelo?}
+\begin{itemize}
+    \item Entrenar un modelo significa ajustar sus parámetros para que aprenda a predecir una salida $y$ a partir de una entrada $X$.
+    \item En modelos como regresión logística o redes neuronales, se optimizan parámetros internos.
+    \item En KNN no se entrena un modelo como tal: se almacenan los datos y se calcula la predicción directamente al comparar con los vecinos.
+    \item Por eso se le conoce como modelo “perezoso”.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{¿Por qué se dice que es un modelo “perezoso”?}
+\begin{itemize}
+    \item No realiza un entrenamiento intensivo.
+    \item Almacena el conjunto de entrenamiento tal cual.
+    \item Calcula las distancias y decide en el momento de la predicción.
+    \item Ventaja: simple y directo. Desventaja: lento con grandes volúmenes.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Sensibilidad a escalas y ruido}
+\begin{itemize}
+    \item En KNN, la distancia entre puntos determina qué tan similares son dos casos.
+    \item Si una variable tiene una escala mucho mayor que otra, dominará la distancia total.
+    \item Ejemplo: si ingreso va de 0 a 10.000 y edad de 0 a 100, ingreso tendrá mayor peso si no se escalan.
+    \item El \textbf{ruido} (datos atípicos o mal registrados) puede sesgar el resultado si $k$ es pequeño.
+    \item Soluciones:
+    \begin{itemize}
+        \item Aplicar escalado de variables.
+        \item Probar diferentes valores de $k$ para mayor robustez.
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{¿Cuándo se usa KNN?}
+\begin{itemize}
+    \item Exploración inicial de patrones.
+    \item Clasificación binaria o multiclase con datos limpios y balanceados.
+    \item Casos donde no se quiere asumir una forma funcional compleja.
+    \item Proyectos con recursos computacionales limitados.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Preprocesamiento necesario para KNN}
+\begin{itemize}
+    \item Eliminar valores faltantes.
+    \item Codificar variables categóricas.
+    \item Escalar las variables numéricas (MinMaxScaler o StandardScaler).
+    \item Dividir datos en entrenamiento y prueba.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Flujo de trabajo práctico}
+\begin{itemize}
+    \item Cargar dataset limpio.
+    \item Separar variables predictoras ($X$) y variable objetivo ($y$).
+    \item Dividir en entrenamiento y prueba.
+    \item Aplicar escalado.
+    \item Entrenar y evaluar el modelo con KNN.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cierre}
+\begin{itemize}
+    \item KNN es un algoritmo simple pero efectivo en tareas de clasificación básica.
+    \item Su desempeño depende fuertemente del preprocesamiento y la elección de $k$.
+    \item En la próxima sesión lo compararemos con otros modelos más sofisticados.
+\end{itemize}
+\end{frame}
+
+\end{document}

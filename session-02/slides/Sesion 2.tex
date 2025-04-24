@@ -1,0 +1,230 @@
+
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{tikz}
+
+\title{Análisis Predictivo y Gestión de Datos}
+\subtitle{Sesión 2: Preparación y Limpieza de Datos}
+\author{Oscar Leonardo Rincón León}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+% Objetivos
+\begin{frame}{Objetivos de la sesión}
+\begin{itemize}
+    \item Comprender cómo la calidad de los datos afecta la capacidad predictiva
+    \item Identificar problemas comunes en los datos y su impacto en los modelos
+    \item Conectar la limpieza con la etapa de preparación de datos en CRISP-DM
+    \item Aplicar estrategias prácticas de depuración y transformación
+\end{itemize}
+\end{frame}
+
+% Importancia de la preparación
+\begin{frame}{¿Por qué importa la preparación en análisis predictivo?}
+\begin{itemize}
+    \item Los modelos aprenden patrones: si los datos están distorsionados, aprenderán mal
+    \item Variables mal estructuradas → patrones falsos
+    \item Ruido = reducción del poder predictivo
+    \item La limpieza es una forma de modelar: decidir qué mantener y cómo
+\end{itemize}
+\end{frame}
+
+
+% Introducción a CRISP-DM
+\begin{frame}{¿Qué es CRISP-DM?}
+\begin{itemize}
+    \item \textbf{CRISP-DM} significa Cross-Industry Standard Process for Data Mining.
+    \item Es un modelo estándar y ampliamente adoptado para desarrollar proyectos de ciencia de datos.
+    \item Proporciona una estructura organizada para abordar problemas de negocio utilizando datos.
+\end{itemize}
+\end{frame}
+
+% CRISP-DM como metodología general
+\begin{frame}{¿Por qué usar CRISP-DM?}
+\begin{itemize}
+    \item Es aplicable en múltiples sectores: salud, educación, industria, gobierno.
+    \item Su enfoque cíclico permite iterar, corregir y mejorar continuamente.
+    \item Ayuda a comunicar el proceso de análisis entre equipos multidisciplinarios.
+    \item Aporta una guía paso a paso para estructurar el trabajo analítico desde la comprensión del problema hasta la implementación.
+\end{itemize}
+\end{frame}
+
+
+
+% Etapas del ciclo CRISP-DM – Parte 1
+\begin{frame}{Etapas del ciclo CRISP-DM (1/2)}
+\begin{itemize}
+    \item \textbf{1. Comprensión del contexto:} entender el problema, sus objetivos y su impacto en un área como educación, salud o administración pública.
+    \item \textbf{2. Comprensión de los datos:} recolectar, explorar y validar la calidad de los datos disponibles.
+    \item \textbf{3. Preparación de los datos:} limpiar, transformar, codificar y seleccionar variables útiles para el análisis posterior.
+\end{itemize}
+\end{frame}
+
+% Etapas del ciclo CRISP-DM – Parte 2
+\begin{frame}{Etapas del ciclo CRISP-DM (2/2)}
+\begin{itemize}
+    \item \textbf{4. Modelado:} seleccionar y entrenar modelos estadísticos o de aprendizaje automático.
+    \item \textbf{5. Evaluación:} verificar si el modelo resuelve el problema, usando métricas adecuadas y revisando supuestos.
+    \item \textbf{6. Despliegue:} comunicar resultados, implementar soluciones o integrarlas en procesos de decisión.
+\end{itemize}
+\end{frame}
+
+
+% CRISP-DM y preparación de datos
+\begin{frame}{Preparación en el ciclo CRISP-DM}
+\begin{itemize}
+    \item La preparación de datos es la \textbf{tercera etapa} del ciclo
+    \item Asegura que los datos estén limpios, completos y listos para el modelado
+    \item Impacta directamente en:
+    \begin{itemize}
+        \item Selección adecuada de modelos
+        \item Métricas válidas de evaluación
+        \item Interpretación clara de resultados
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+% Decisiones clave
+\begin{frame}{Decisiones clave al preparar datos}
+\begin{itemize}
+    \item ¿Qué hacer con valores faltantes?
+    \item ¿Qué variables eliminar?
+    \item ¿Qué transformar?
+    \item ¿Qué codificar o escalar?
+    \item Cada decisión afecta la precisión, estabilidad e interpretabilidad del modelo
+\end{itemize}
+\end{frame}
+
+% Errores comunes
+\begin{frame}{Errores comunes y sus consecuencias}
+\begin{itemize}
+    \item Mantener variables con alta proporción de nulos → modelos inconsistentes
+    \item No escalar variables → sesgo en modelos sensibles a magnitudes (KNN, SVM)
+    \item Duplicados → sobreajuste
+    \item Codificación incorrecta → distorsión de relaciones
+\end{itemize}
+\end{frame}
+
+% Herramientas en Python
+
+% Fundamentos teóricos sobre preparación de datos
+\begin{frame}{¿Por qué es crucial la preparación de los datos?}
+\begin{itemize}
+    \item La calidad de los datos condiciona la calidad de los modelos predictivos.
+    \item Los modelos aprenden patrones de los datos disponibles: si hay errores, aprenden mal.
+    \item En proyectos reales, más del 70\% del tiempo se invierte en preparación, no modelado.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Preparación en el ciclo CRISP-DM}
+\begin{itemize}
+    \item Es la tercera etapa del ciclo y conecta la comprensión del negocio con la implementación del modelo.
+    \item Transforma datos crudos en una base coherente y lista para el análisis.
+    \item Afecta directamente la calidad de los resultados, su interpretación y utilidad práctica.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Errores comunes a corregir}
+\begin{itemize}
+    \item \textbf{Valores faltantes:} eliminación o imputación (media, mediana, por grupo).
+    \item \textbf{Variables mal codificadas:} ordinales, categóricas, numéricas que no lo son.
+    \item \textbf{Escalas incompatibles:} requiere escalado para evitar sesgos.
+    \item \textbf{Outliers:} afectan modelos sensibles; deben detectarse y analizarse.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Preparación y aprendizaje supervisado}
+\begin{itemize}
+    \item En aprendizaje supervisado, todo modelo depende de una buena relación entre variables explicativas ($X$) y objetivo ($Y$).
+    \item Si los datos no están bien preparados, los modelos no aprenderán patrones útiles.
+    \item La limpieza garantiza interpretabilidad, generalización y confianza en los resultados.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Referencias clave}
+\begin{itemize}
+    \item \textbf{Hands-On ML (Cap. 2):} destaca la limpieza y transformación como parte esencial del flujo ML.
+    \item \textbf{ISLP:} enfatiza que un análisis válido depende de datos estructurados y bien documentados.
+    \item \textbf{CRISP-DM:} define la preparación como puente entre exploración y modelado.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Preparación práctica con Python}
+\begin{itemize}
+    \item \texttt{pandas}: limpieza, filtrado, imputación
+    \item \texttt{numpy}: operaciones matemáticas y máscaras
+    \item \texttt{scikit-learn}: escalado, codificación, pipelines
+\end{itemize}
+\end{frame}
+
+% Tratamiento de nulos
+\begin{frame}{Tratamiento de valores faltantes}
+\begin{itemize}
+    \item Opciones:
+    \begin{itemize}
+        \item Eliminación: si son pocos y aleatorios
+        \item Imputación: media, mediana, moda, por grupos
+        \item Modelos de imputación (avanzado)
+    \end{itemize}
+    \item Toda imputación introduce supuestos
+\end{itemize}
+\end{frame}
+
+% Codificación
+\begin{frame}{Codificación de variables categóricas}
+\begin{itemize}
+    \item Convertir texto en números para modelos
+    \item Opciones:
+    \begin{itemize}
+        \item Ordinal: cuando hay jerarquía
+        \item One-hot encoding: para evitar supuestos
+    \end{itemize}
+    \item Evitar codificación que induzca relaciones falsas
+\end{itemize}
+\end{frame}
+
+% Escalado
+\begin{frame}{Escalado de variables numéricas}
+\begin{itemize}
+    \item Modelos como KNN y regresión logística son sensibles a magnitudes
+    \item Opciones:
+    \begin{itemize}
+        \item Min-Max Scaling
+        \item Z-score (estandarización)
+    \end{itemize}
+    \item Escalar antes de entrenar y validar, nunca después
+\end{itemize}
+\end{frame}
+
+% Ejercicio práctico
+\begin{frame}{Ejercicio práctico}
+\begin{itemize}
+    \item Dataset con problemas reales:
+    \begin{itemize}
+        \item Valores nulos
+        \item Categóricas no codificadas
+        \item Magnitudes no comparables
+    \end{itemize}
+    \item Meta: preparar para su uso en un modelo de clasificación binaria
+\end{itemize}
+\end{frame}
+
+% Cierre
+\begin{frame}{Cierre de la sesión}
+\begin{itemize}
+    \item La preparación no es técnica: es estratégica
+    \item Afecta todo el proceso de modelado
+    \item Un analista predictivo prepara pensando en el modelo, el error y la interpretación
+\end{itemize}
+\vspace{0.5cm}
+\textbf{Tarea:} Aplicar limpieza a un nuevo dataset. Documentar decisiones y justificar imputaciones.
+\end{frame}
+
+\end{document}

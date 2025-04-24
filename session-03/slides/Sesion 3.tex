@@ -1,0 +1,106 @@
+
+\documentclass{beamer}
+\usetheme{Madrid}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{lmodern}
+
+\title{Análisis Predictivo y Gestión de Datos}
+\subtitle{Sesión 3: Exploración y Visualización de Patrones}
+\author{Oscar Leonardo Rincón León}
+\date{\today}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Objetivo de la sesión}
+Analizar visualmente la estructura de los datos para guiar la selección de modelos predictivos.
+\end{frame}
+
+\begin{frame}{¿Por qué es importante la exploración de datos (EDA)?}
+\begin{itemize}
+    \item Permite comprender la estructura y comportamiento de los datos.
+    \item Detecta errores, valores atípicos y relaciones inesperadas.
+    \item Guía la selección del modelo predictivo y el preprocesamiento.
+    \item Fortalece la interpretación de los resultados.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Elementos clave en EDA}
+\begin{itemize}
+    \item \textbf{Distribuciones univariadas:} histogramas, boxplots, KDE.
+    \item \textbf{Relaciones bivariadas:} scatterplots, boxplots por categoría.
+    \item \textbf{Correlaciones:} mapas de calor.
+    \item \textbf{Outliers y valores nulos:} detección visual y estadística.
+    \item \textbf{Transformaciones:} log, normalización, escalado.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Distribuciones y visualización univariada}
+\begin{itemize}
+    \item Ayudan a identificar asimetrías, colas largas, sesgo.
+    \item La elección de bins en histogramas influye en la percepción.
+    \item Boxplots muestran mediana, cuartiles y valores atípicos.
+    \item KDE suaviza la distribución (estimación de densidad).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Relaciones bivariadas y correlaciones}
+\begin{itemize}
+    \item \textbf{Diagramas de dispersión:} relaciones entre dos variables numéricas.
+    \item \textbf{Mapas de calor:} matriz de correlación visual.
+    \item \textbf{Boxplots por grupo:} para comparar variables numéricas entre categorías.
+    \item Correlación $\neq$ causalidad, pero puede guiar hipótesis.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Outliers y estructura de los datos}
+\begin{itemize}
+    \item Valores extremos pueden ser errores, casos reales o mal codificados.
+    \item Su detección es clave para evitar distorsión en modelos.
+    \item La visualización facilita su identificación antes del análisis.
+    \item Algunos algoritmos son sensibles a outliers (ej. KNN, regresión).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Visualización efectiva: más que estética}
+\begin{itemize}
+    \item El objetivo no es embellecer, sino informar y guiar decisiones.
+    \item Cada gráfico debe responder a una pregunta específica.
+    \item Buenas prácticas: claridad, etiquetas, escala apropiada.
+    \item La visualización también comunica hallazgos al público no técnico.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Herramientas prácticas en Python}
+\begin{itemize}
+    \item \texttt{matplotlib}: base para gráficos personalizados.
+    \item \texttt{seaborn}: enfoque estadístico y estético para gráficos rápidos.
+    \item \texttt{pandas}: soporte básico para gráficos integrados en DataFrames.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Actividad práctica}
+\begin{itemize}
+    \item Usar el dataset limpio con 1300 registros.
+    \item Visualizar:
+    \begin{itemize}
+        \item Histogramas y boxplots univariados.
+        \item Diagramas de dispersión y mapas de calor.
+    \end{itemize}
+    \item Detectar patrones visuales útiles para la predicción.
+    \item Reflexionar sobre posibles transformaciones.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cierre de la sesión}
+\begin{itemize}
+    \item El EDA no es opcional: mejora la comprensión y orienta decisiones.
+    \item Una visualización bien hecha permite anticipar errores, confirmar hipótesis o replantear modelos.
+    \item El análisis visual es tanto exploratorio como comunicativo.
+\end{itemize}
+\end{frame}
+
+\end{document}
