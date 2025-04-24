@@ -1,0 +1,12 @@
+name: analisis-predictivo
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9
+  - jupyterlab
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
