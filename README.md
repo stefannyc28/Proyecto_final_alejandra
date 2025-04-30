@@ -5,7 +5,7 @@
 Material del curso presencial “Análisis Predictivo y Gestión de Datos”: presentaciones (PDF/TEX), notebooks de Jupyter y recursos para las 8 sesiones.
 
 ## Contenidos
-
+- [Introducción general al curso](Introduccion/)
 - [Sesión 1: Introducción al análisis predictivo](session-01/)  
 - [Sesión 2: Preparación y limpieza de datos](session-02/)  
 - [Sesión 3: Exploración visual y análisis de patrones](session-03/)  
